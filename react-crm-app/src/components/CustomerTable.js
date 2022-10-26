@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomerTable = (props) => {
 
-  console.log(props)
+  console.log(props.customers)
   return (
     <table>
       <thead>
@@ -22,8 +22,11 @@ const CustomerTable = (props) => {
               <td>{customer.phone}</td>
               <td>{customer.serviceDate}</td>
               <td>
-                <button className="button muted-button">Edit</button>
-                <button className="button muted-button">Delete</button>
+                <button className="edit-button">Edit</button>
+                <button className="delete-button"
+                // making an anonymous function here will prevent Onclick to exectue automatically
+                onClick={() => props.deleteCustomer(customer.id)}
+                >Delete</button>
               </td>
             </tr>
 

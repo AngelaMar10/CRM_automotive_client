@@ -25,18 +25,25 @@ const App = () => {
       ...customers, customer])
 
   }
+  // Functio to delete customers
+  const deleteCustomer = id => {
+    setCustomers(customers.filter((customer) => customer.id !== id))
+  }
   return (
     <div className="container">
       <h1>DP Automotive services customers</h1>
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add customer</h2>
-          <AddCustomer addCustomer={addCustomer}/>
+          <AddCustomer 
+            addCustomer={addCustomer}/>
         </div>
         <div className="flex-large">
           <h2>Customers Information</h2>
           {/* To pass the customers information, I use props */}
-          <CustomerTable customers={customers}/>
+          <CustomerTable 
+            customers={customers} 
+            deleteCustomer={deleteCustomer}/>
         </div>
       </div>
     </div>
