@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomerTable = (props) => {
 
-  console.log(props.customers)
+  console.log(props)
   return (
     <table>
       <thead>

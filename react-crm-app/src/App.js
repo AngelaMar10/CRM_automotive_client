@@ -7,7 +7,7 @@ import './App.css';
 import AddCustomer from './components/AddCustomer';
 
 // As I work with local storage I am using a framework to allocate an id for each customer, this will help in my delete function.
-function App() {
+const App = () => {
 
   const customersInfo = [
     { id:1, name: 'Mayra Lav', rego: "SA456YU", phone: "0455223344", serviceDate: "02/09/2021" },
@@ -31,7 +31,7 @@ function App() {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add customer</h2>
-          <AddCustomer />
+          <AddCustomer addCustomer={addCustomer}/>
         </div>
         <div className="flex-large">
           <h2>Customers Information</h2>
