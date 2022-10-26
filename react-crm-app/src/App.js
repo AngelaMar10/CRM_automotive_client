@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React from 'react'
+import CustomerTable from './components/CustomerTable'
+import ReactDOM from 'react-dom'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>DP Automotive services customers</h1>
+      <div className="flex-row">
+        <div className="flex-large">
+          <h2>Add customer</h2>
+        </div>
+        <div className="flex-large">
+          <h2>Customers Information</h2>
+          <CustomerTable />
+        </div>
+      </div>
     </div>
   );
 }
