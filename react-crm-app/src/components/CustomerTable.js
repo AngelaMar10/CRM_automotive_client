@@ -1,6 +1,8 @@
 import React from "react";
 
-const CustomerTable = () => {
+const CustomerTable = (props) => {
+
+  console.log(props.customers)
   return (
     <table>
       <thead>
@@ -12,16 +14,22 @@ const CustomerTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Customer name</td>
-          <td>Rego</td>
-          <td>Phone</td>
-          <td>Date</td>
-          <td>
-            <button className="button muted-button">Edit</button>
-            <button className="button muted-button">Delete</button>
-          </td>
-        </tr>
+        {
+          props.customers.map(customer => (
+            <tr key={customer.id}>
+              <td>{customer.name}</td>
+              <td>{customer.rego}</td>
+              <td>{customer.phone}</td>
+              <td>{customer.serviceDate}</td>
+              <td>
+                <button className="button muted-button">Edit</button>
+                <button className="button muted-button">Delete</button>
+              </td>
+            </tr>
+
+          ))
+        }
+        
       </tbody>
     </table>
   )
